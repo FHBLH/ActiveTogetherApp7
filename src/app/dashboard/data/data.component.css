@@ -31,3 +31,9 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+@media (min-width: 992px) {
+  .row-lg-min-height {
+    min-height: 75px;
+  }
+}
