@@ -1,8 +1,12 @@
-<div id="header">
-  <div id="background">
-    <img src="{{imagePath}}" alt="Lawn with sports equipment">&nbsp;&nbsp;
-    <h1>{{ title }}</h1>
+<div class="sticky-header">
+  <div class="header-content">
+    <img class="header-logo" src="{{imagePath}}" alt="Lawn with sports equipment">
+    <div class="header-text">
+      <h1>{{ title }}</h1>
+      <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+        <a mat-tab-link [routerLink]="['/dashboard']">Dashboard</a>&nbsp;&nbsp;
+        <a mat-tab-link [routerLink]="['/about']">About</a>
+      </nav>
+    </div>
   </div>
-  <a [routerLink]="['/dashboard']">Dashboard</a>&nbsp;&nbsp;
-  <a [routerLink]="['/about']">About</a>
 </div>

@@ -4,11 +4,12 @@ import { HeaderComponent } from './header/header.component';
 import { BackendService } from './shared/backend.service';
 import { SharedModule } from './shared/shared.module';
 import { StoreService } from './shared/store.service';
+import { MatTabsModule } from "@angular/material/tabs";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SharedModule],
+  imports: [RouterOutlet, HeaderComponent, SharedModule, MatTabsModule],
   providers: [BackendService, StoreService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

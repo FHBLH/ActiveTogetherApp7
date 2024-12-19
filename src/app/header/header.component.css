@@ -1,22 +1,36 @@
-#header {
-  text-align: center;
+.sticky-header {
+  top: 0;
+  position: sticky;
+  z-index: 999;
+  background-color: #f8f9fa;
+  padding: 10px 0;
   width: 100%;
+  box-shadow: 0 2px 5px rgb(255, 181, 0, 0.3);
 }
 
-#background h1 {
-  font-weight: bold;
-}
-
-#background {
-  width: 100%;
-  display:inline-flex;
-  align-items:center;
+.header-content {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background: linear-gradient(0.45turn, #32a21b, #f8f4e1, #ffb500);
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
+.header-logo {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: xx-large;
 }

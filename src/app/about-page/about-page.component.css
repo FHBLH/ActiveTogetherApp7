@@ -1,0 +1,17 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto; /* Center the container */
+  text-align: center; /* Center the text */
+  padding: 40px 20px; /* Add some padding */
+}
+
+.about-container p {
+  font-size: large;
+  line-height: 1.8;
+}
+
+.about-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
