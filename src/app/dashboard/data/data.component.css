@@ -1,3 +1,33 @@
 button.active {
-    background-color: orange;
+  background-color: orange;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.grid-header {
+  font-weight: bold;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+.grid-border {
+  border: 1px solid black;
+}
+
+.row > .grid-border:not(:last-child) {
+  border-right: none; /* Remove right border from all except the last column */
+}
+
+.row:not(:last-child) > .grid-border {
+  border-bottom: none; /* Remove bottom border from all except the last row */
+}
+
+#pagination {
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
 }

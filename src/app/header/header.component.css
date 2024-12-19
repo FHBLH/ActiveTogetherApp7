@@ -1,5 +1,18 @@
-.flex {
-    display: flex;
+#header {
+  text-align: center;
+  width: 100%;
+}
+
+#background h1 {
+  font-weight: bold;
+}
+
+#background {
+  width: 100%;
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  background: linear-gradient(0.45turn, #32a21b, #f8f4e1, #ffb500);
 }
 
 img {

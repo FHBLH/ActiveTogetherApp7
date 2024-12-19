@@ -1,11 +1,38 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <h2>Zum Kurs anmelden!</h2>
-    <input placeholder="Name" type="input" formControlName="name"><br />
-    <input placeholder="Geburtsdatum" type="date" formControlName="birthdate"><br />
-    <select formControlName="courseId">
-        <option value="" disabled>Bitte auswählen</option>
-        <option *ngFor="let course of storeService.courses" [ngValue]="course.id">{{course.name}}, {{course.instructor}}</option>
-    </select>
-
-    <button type="submit">Erfassen</button>
-</form>
+<div class="add-data-container">
+  <h2>Zum Kurs anmelden!</h2>
+  <form #myForm="ngForm" [formGroup]="registrationForm" (ngSubmit)="onSubmit(myForm)">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="input" formControlName="name">
+      @if (registrationForm.get('name')?.hasError('required')) {
+        <mat-error>Der Name muss angegeben werden!</mat-error>
+      }
+      @if (registrationForm.get('name')?.hasError('minlength')) {
+        <mat-error>Der Name muss mindestens 5 Zeichen haben!</mat-error>
+      }
+      @if (registrationForm.get('name')?.hasError('maxlength')) {
+        <mat-error>Der Name muss weniger als 100 Zeichen haben!</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Geburtsdatum</mat-label>
+      <input matInput type="date" formControlName="birthdate">
+      @if (registrationForm.get('birthdate')?.hasError('required')) {
+        <mat-error>Das Geburtsdatum muss angegeben werden!</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Kurs</mat-label>
+      <mat-select formControlName="courseId">
+        <mat-option *ngFor="let course of storeService.courses"
+                    [value]="course.id">{{ course.name }}
+        </mat-option>
+      </mat-select>
+      @if (registrationForm.get('courseId')?.hasError('required')) {
+        <mat-error>Ein Kurs muss ausgewählt werden!</mat-error>
+      }
+    </mat-form-field>
+    <mat-checkbox formControlName="emailSubscription">E-Mail Newsletter abonnieren</mat-checkbox>
+    <button [disabled]="registrationForm.invalid" mat-stroked-button type="submit">Erfassen</button>
+  </form>
+</div>
