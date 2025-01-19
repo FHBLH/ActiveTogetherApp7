@@ -5,11 +5,17 @@ import { BackendService } from '../../shared/backend.service';
 import {MatButtonModule} from "@angular/material/button";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Registration } from '../../shared/Interfaces/Registration';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-data',
   standalone: true,
-  imports: [SharedModule, MatButtonModule, MatProgressSpinnerModule],
+  imports: [
+    SharedModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule
+  ],
   templateUrl: './data.component.html',
   styleUrl: './data.component.css'
 })
