@@ -4,6 +4,8 @@ export interface Registration {
     id: string;
     name: string;
     birthdate: string,
+    registrationDate: Date,
     course: Course,
-    courseId: number
+    courseId: number,
+    isVisible?: boolean
   }

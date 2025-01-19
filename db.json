@@ -72,21 +72,24 @@
   "registrations": [
     {
       "id": 1,
-      "name": "Testuser",
-      "birthdate": "2024-11-13",
+      "name": "Max Muster",
+      "birthdate": "2002-08-11",
+      "registrationDate": "2025-01-15T12:30:00Z",
       "courseId": "_iL775j"
     },
     {
+      "id": 2,
       "name": "Julia Schabasser",
-      "courseId": "_iL775i",
       "birthdate": "1995-02-23",
-      "id": 2
+      "registrationDate": "2025-01-16T12:24:00Z",
+      "courseId": "_iL775i"
     },
     {
+      "id": 3,
       "name": "Julia Schabasser",
-      "courseId": "_iL775a",
       "birthdate": "1995-02-23",
-      "id": 3
+      "registrationDate": "2025-01-10T08:00:15Z",
+      "courseId": "_iL775a"
     }
   ]
 }

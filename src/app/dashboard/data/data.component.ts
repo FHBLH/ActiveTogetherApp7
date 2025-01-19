@@ -3,11 +3,13 @@ import { SharedModule } from '../../shared/shared.module';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
 import {MatButtonModule} from "@angular/material/button";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Registration } from '../../shared/Interfaces/Registration';
 
 @Component({
   selector: 'app-data',
   standalone: true,
-  imports: [SharedModule, MatButtonModule],
+  imports: [SharedModule, MatButtonModule, MatProgressSpinnerModule],
   templateUrl: './data.component.html',
   styleUrl: './data.component.css'
 })
@@ -32,4 +34,13 @@ export class DataComponent {
     return res;
   }
 
+  deleteRegistration(registration: Registration) {
+    registration.isVisible = false;
+    this.backendService.deleteRegistration(registration.id, this.page);
+  }
+
+  changeOrder() {
+    this.storeService.changeOrder();
+    this.backendService.getRegistrations(this.page);
+  }
 }

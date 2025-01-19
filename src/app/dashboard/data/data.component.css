@@ -37,3 +37,34 @@ h2 {
     min-height: 75px;
   }
 }
+
+.clickable {
+  cursor: pointer;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.clickable:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.deletion-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 992px) {
+    width: calc(10 / 12 * 100%);
+  }
+
+  mat-spinner {
+    height: 80%;
+  }
+}
