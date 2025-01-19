@@ -8,6 +8,17 @@ h2 {
   margin-top: 1em;
 }
 
+.select-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  mat-form-field {
+    width: 400px;
+  }
+}
+
 .grid-header {
   font-weight: bold;
   text-align: center;
