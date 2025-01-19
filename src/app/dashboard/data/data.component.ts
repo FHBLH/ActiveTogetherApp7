@@ -50,12 +50,12 @@ export class DataComponent {
 
   deleteRegistration(registration: Registration) {
     registration.isVisible = false;
-    this.backendService.deleteRegistration(registration.id, this.page);
+    this.backendService.deleteRegistration(registration.id, this.storeService.currentPage);
   }
 
   changeOrder() {
     this.storeService.changeOrder();
-    this.backendService.getRegistrations(this.page);
+    this.backendService.getRegistrations(this.storeService.currentPage);
   }
 
   filteredCourses() {
