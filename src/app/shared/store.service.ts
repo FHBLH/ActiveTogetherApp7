@@ -12,7 +12,8 @@ export class StoreService {
   public courses: Course[] = [];
   public registrations: Registration[] = [];
   public registrationTotalCount: number = 0;
-  public currentPage: number = 1;
+  public currentPage: number = 0;
+  public currentPageSize: number = 5;
   public currentOrder: string = "";
 
   public changeOrder() {

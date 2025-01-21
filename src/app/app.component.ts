@@ -16,10 +16,11 @@ import { MatTabsModule } from "@angular/material/tabs";
 })
 export class AppComponent implements OnInit {
 
-  constructor(private backendService: BackendService, public storeService: StoreService) {}
+  constructor(private backendService: BackendService) {
+  }
 
   ngOnInit(): void {
     this.backendService.getCourses();
-    this.backendService.getRegistrations(this.storeService.currentPage);
+    this.backendService.getRegistrations();
   }
 }

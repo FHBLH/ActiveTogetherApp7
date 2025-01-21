@@ -9,6 +9,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-data',
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule
   ],
   templateUrl: './data.component.html',
   styleUrl: './data.component.css'
@@ -30,23 +32,7 @@ export class DataComponent {
   constructor(public storeService: StoreService, private backendService: BackendService) {
   }
 
-  public page: number = 0;
   public filter = "";
-
-  selectPage(i: any) {
-    let currentPage = i;
-    this.storeService.currentPage = i;
-    this.backendService.getRegistrations(currentPage);
-  }
-
-  public returnAllPages() {
-    var pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
-    let res = [];
-    for (let i = 0; i < pagesCount; i++) {
-      res.push(i + 1);
-    }
-    return res;
-  }
 
   deleteRegistration(registration: Registration) {
     registration.isVisible = false;
@@ -55,7 +41,7 @@ export class DataComponent {
 
   changeOrder() {
     this.storeService.changeOrder();
-    this.backendService.getRegistrations(this.storeService.currentPage);
+    this.backendService.getRegistrations();
   }
 
   filteredCourses() {
@@ -64,5 +50,11 @@ export class DataComponent {
       item.instructor.toLowerCase().includes(this.filter.toLowerCase()) ||
       item.eventLocation.name.toLowerCase().includes(this.filter.toLowerCase()) ||
       item.eventLocation.address.toLowerCase().includes(this.filter.toLowerCase()));
+  }
+
+  handlePageEvent(event: PageEvent) {
+    this.storeService.currentPage = event.pageIndex;
+    this.storeService.currentPageSize = event.pageSize;
+    this.backendService.getRegistrations();
   }
 }

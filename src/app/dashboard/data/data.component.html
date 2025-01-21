@@ -85,8 +85,14 @@
   </div>
 </div>
 
-<div id="pagination">
-  <button mat-stroked-button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)"
-          type="button" *ngFor="let page of returnAllPages()">{{ page }}
-  </button>
+<div class="pagination">
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="storeService.registrationTotalCount"
+    [pageSize]="storeService.currentPageSize"
+    showFirstLastButtons="true"
+    [pageSizeOptions]="[5, 10, 25]"
+    [pageIndex]="storeService.currentPage"
+    aria-label="Select page">
+  </mat-paginator>
 </div>

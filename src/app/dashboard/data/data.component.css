@@ -37,10 +37,15 @@ h2 {
   border-bottom: none; /* Remove bottom border from all except the last row */
 }
 
-#pagination {
-  margin-top: 4px;
+.pagination {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  margin: auto;
+
+  @media (min-width: 992px) {
+    width: calc(10 / 12 * 100%);
+  }
 }
 
 @media (min-width: 992px) {

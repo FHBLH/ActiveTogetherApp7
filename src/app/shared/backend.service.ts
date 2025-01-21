@@ -18,7 +18,7 @@ export class BackendService {
     });
   }
 
-  public getRegistrations(page: number) {
+  public getRegistrations() {
 
     const options = {
       observe: 'response' as const,
@@ -28,8 +28,10 @@ export class BackendService {
     };
 
     const orderQuery = this.storeService.currentOrder === "" ? "" : `&_sort=registrationDate&_order=${this.storeService.currentOrder}`
+    const page = this.storeService.currentPage + 1;
+    const pageSize = this.storeService.currentPageSize;
 
-    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=2${orderQuery}`, options).subscribe(data => {
+    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=${pageSize}${orderQuery}`, options).subscribe(data => {
       this.storeService.registrations = data.body!;
       this.storeService.registrationTotalCount = Number(data.headers.get('X-Total-Count'));
     });
@@ -37,13 +39,13 @@ export class BackendService {
 
   public addRegistration(registration: any, page: number) {
     this.http.post('http://localhost:5000/registrations', registration).subscribe(_ => {
-      this.getRegistrations(page);
+      this.getRegistrations();
     })
   }
 
   public deleteRegistration(registrationId: string, page: number) {
     this.http.delete(`http://localhost:5000/registrations/${registrationId}`).subscribe(_ => {
-      this.getRegistrations(page);
+      this.getRegistrations();
     })
   }
 }
