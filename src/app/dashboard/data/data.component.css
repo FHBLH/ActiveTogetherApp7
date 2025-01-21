@@ -74,8 +74,4 @@ h2 {
   @media (min-width: 992px) {
     width: calc(10 / 12 * 100%);
   }
-
-  mat-spinner {
-    height: 80%;
-  }
 }

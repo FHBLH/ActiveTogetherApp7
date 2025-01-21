@@ -57,8 +57,9 @@
           Anmeldedatum {{ storeService.currentOrder === 'asc' ? '(aufsteigend)' : storeService.currentOrder === 'desc' ? '(absteigend)' : '' }}
       </span>
     </div>
-    <div class="d-flex align-items-lg-center col-3 col-lg-2 overflow-hidden grid-border grid-header">Name</div>
-    <div class="d-flex align-items-lg-center col-3 col-lg-3 overflow-hidden grid-border grid-header">Geburtsdatum</div>
+    <div class="d-flex align-items-lg-center col-2 col-lg-2 overflow-hidden grid-border grid-header">Name</div>
+    <div class="d-flex align-items-lg-center col-2 col-lg-2 overflow-hidden grid-border grid-header">E-Mail</div>
+    <div class="d-flex align-items-lg-center col-2 col-lg-1 overflow-hidden grid-border grid-header">Geburtsdatum</div>
     <div class="d-flex align-items-lg-center col-2 col-lg-2 overflow-hidden grid-border grid-header">Kurs</div>
     <div class="d-flex align-items-lg-center col-1 col-lg-1 overflow-hidden grid-border grid-header"></div>
   </div>
@@ -71,8 +72,9 @@
     <div
       class="d-flex align-items-lg-center col-3 col-lg-2 overflow-hidden grid-border">{{ registration.registrationDate | date:'dd.MM.yyyy HH:mm:ss' }}
     </div>
-    <div class="d-flex align-items-lg-center col-3 col-lg-2 overflow-hidden grid-border">{{ registration.name }}</div>
-    <div class="d-flex align-items-lg-center col-3 col-lg-3 overflow-hidden grid-border">{{ registration.birthdate }}
+    <div class="d-flex align-items-lg-center col-2 col-lg-2 overflow-hidden grid-border">{{ registration.name }}</div>
+    <div class="d-flex align-items-lg-center col-2 col-lg-2 overflow-hidden grid-border">{{ registration.email }}</div>
+    <div class="d-flex align-items-lg-center col-2 col-lg-1 overflow-hidden grid-border">{{ registration.birthdate }}
     </div>
     <div
       class="d-flex align-items-lg-center col-2 col-lg-2 overflow-hidden grid-border">{{ registration.course.name }}

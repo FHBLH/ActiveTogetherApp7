@@ -15,6 +15,16 @@
       }
     </mat-form-field>
     <mat-form-field>
+      <mat-label>E-Mail</mat-label>
+      <input matInput type="input" formControlName="email">
+      @if (registrationForm.get('email')?.hasError('required')) {
+        <mat-error>Die E-Mail Adresse muss angegeben werden!</mat-error>
+      }
+      @if (registrationForm.get('email')?.hasError('email')) {
+        <mat-error>Die angegebene E-Mail Adresse ist ungültig!</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
       <mat-label>Geburtsdatum</mat-label>
       <input matInput type="date" formControlName="birthdate">
       @if (registrationForm.get('birthdate')?.hasError('required')) {

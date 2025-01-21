@@ -28,6 +28,7 @@ export class AddDataComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
       birthdate: [null, Validators.required],
       courseId: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       registrationDate: [null],
       emailSubscription: [false]
     })
