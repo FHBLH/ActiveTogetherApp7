@@ -1,0 +1,22 @@
+.faq-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 40px 20px;
+}
+
+.faq-container p {
+  font-size: medium;
+  line-height: 1.8;
+}
+
+.faq-container h5 {
+  font-weight: bold;
+}
+
+.faq-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+

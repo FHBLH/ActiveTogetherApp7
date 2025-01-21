@@ -1,8 +1,8 @@
 .about-container {
-  max-width: 800px;
-  margin: 0 auto; /* Center the container */
-  text-align: center; /* Center the text */
-  padding: 40px 20px; /* Add some padding */
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .about-container p {

@@ -66,7 +66,7 @@
   <div class="row position-relative row-lg-min-height justify-content-center"
        *ngFor="let registration of storeService.registrations">
     <div [hidden]="registration.isVisible === undefined" class="deletion-overlay">
-      <mat-spinner color="accent" style="height: 80%"></mat-spinner>
+      <mat-spinner color="primary" style="height: 80%"></mat-spinner>
     </div>
 
     <div
